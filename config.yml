@@ -1,0 +1,137 @@
+# if your site is in 'https', then make sure your base url isn't written using 'http'
+# otherwise your sitemap would contain http (as opposeed to https) URLs. This would
+# affect Google indexing of your URLs.
+baseURL: "http://127.0.0.1/"
+title: mxcezl
+paginate: 5
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+googleAnalytics: G-SNM3TSQGF6
+
+minify:
+    disableXML: true
+    # minifyOutput: true
+
+languages:
+    en:
+        languageName: "EN"
+        title: mxcezl # if deleted, it will fallback to default title
+        weight: 1
+        taxonomies:
+          category: categories
+          tag: tags
+        menu:
+            main:
+                - name: 🏠 Home
+                  url: /
+                  weight: 1
+                - name: 📜 Posts
+                  url: posts/
+                  weight: 2
+                - name: 📚 Categories
+                  url: categories/
+                  weight: 3
+                - name: 🔍 Search
+                  url: search/
+                  weight: 4
+                - name: 🕵️‍♂️ About
+                  url: about/
+                  weight: 5
+        params:
+          languageAltTitle: English
+          profileMode:
+              enabled: true
+              title: Maxence Z.
+              imageUrl: "/images/profile/pp.jpg"
+              imageTitle: Profile Picture
+              # imageWidth: 120
+              # imageHeight: 120
+              subtitle: "⚡ Securiph Co-Founder | 🚩 CTF Player"
+          editPost:
+              URL: "https://github.com/mxcezl/mxcezl.github.io/tree/main/content"
+              Text: "Suggest Changes" # edit text
+              appendFilePath: true # to append file path to Edit link
+              disabled: false
+
+outputs:
+    home:
+        - HTML
+        - JSON
+        - RSS
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "mxcezl - InfoSec Lover | CTF Player | Write-Ups"
+    author: mxcezl
+    keywords: [ Security, InfoSec, CyberSec, CTF, Write-Ups, mxcezl, blog, articles, solution ]
+    defaultTheme: dark
+    disableThemeToggle: true
+    ShowReadingTime: true
+    # disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: false
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: true
+    ShowToc: true
+    comments: true
+    hideFooter: true
+    socialIcons:
+        - name: github
+          url: https://github.com/mxcezl
+        - name: linkedin
+          url: https://www.linkedin.com/in/maxence-zol/
+        - name: KoFi
+          url: https://ko-fi.com/mxcezl
+        - name: Rss
+          url: index.xml
+
+    # analytics:
+    #     google:
+    #         SiteVerificationTag: "XYZabc"
+
+    assets:
+        disableHLJS: true
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        noClasses: false
+        # anchorLineNos: true
+        # codeFences: true
+        guessSyntax: true
+        # lineNos: true
+        # style: monokai
+
+privacy:
+    vimeo:
+        disabled: false
+        simple: true
+
+    twitter:
+        disabled: false
+        enableDNT: true
+        simple: true
+
+    instagram:
+        disabled: false
+        simple: true
+
+    youtube:
+        disabled: false
+        privacyEnhanced: true
+
+services:
+    instagram:
+        disableInlineCSS: true
+    twitter:
+        disableInlineCSS: true
